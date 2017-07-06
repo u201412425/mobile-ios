@@ -84,7 +84,12 @@ class AddFuelUpEntryViewController: UIViewController, UIPickerViewDataSource, UI
         "Age": ageValue,
         "ImagenUrl": "http://vcsoft.pe/images/mem3.png"
     ]
-    Alamofire.request("http://doggystyle.vcsoft.pe/api/Pets/0", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+    var url = "http://doggystyle.vcsoft.pe/api/Pets/0"
+    if data != nil {
+        let id = data!.petId
+        url = "http://doggystyle.vcsoft.pe/api/Pets/\(id)"
+    }
+    Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             print(response.request ?? "NOREQ")  // original URL request
             print(response.response ?? "NORESP") // HTTP URL response
             print(response.data ?? "NODATA")     // server data
