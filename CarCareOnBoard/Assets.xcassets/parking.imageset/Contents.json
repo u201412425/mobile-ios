@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "parking.jpg",
+      "filename" : "perros-en-adopcion.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "parking-1.jpg",
+      "filename" : "perros-en-adopcion-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "parking-2.jpg",
+      "filename" : "perros-en-adopcion-2.jpg",
       "scale" : "3x"
     }
   ],
