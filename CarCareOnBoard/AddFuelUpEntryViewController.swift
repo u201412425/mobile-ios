@@ -8,15 +8,18 @@
 
 import UIKit
 
-class AddFuelUpEntryViewController: UIViewController {
+class AddFuelUpEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-  @IBOutlet weak var gallonsTextField: UITextField!
+    @IBOutlet weak var gallonsTextField: UITextField!
   
-  @IBOutlet weak var unitPriceTextField: UITextField!
+    @IBOutlet weak var unitPriceTextField: UITextField!
   
-  @IBOutlet weak var odometerTextField: UITextField!
+    @IBOutlet weak var odometerTextField: UITextField!
   
-  @IBOutlet weak var locationReferenceTextField: UITextField!
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var locationReferenceTextField: UITextField!
   
   
     override func viewDidLoad() {
@@ -28,6 +31,23 @@ class AddFuelUpEntryViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+
+    @IBAction func valueChanged(_ sender: Any) {
+        ageLabel.text = String(format: "%d años", Int(slider.value))
+    }
+    let pickerDataSource=["Pekines","Alemán","Poodle","Rottweiler","Salchicha","Otro"]
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerDataSource[row]
     }
     
 

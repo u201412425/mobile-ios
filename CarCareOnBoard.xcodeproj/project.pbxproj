@@ -24,6 +24,7 @@
 		BE61D1BB1EEEC15800987432 /* CarCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE61D1B91EEEC15800987432 /* CarCare.xcdatamodeld */; };
 		BE61D1BD1EEECC0F00987432 /* CarCareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE61D1BC1EEECC0F00987432 /* CarCareStore.swift */; };
 		D51057F21F0C955E00904813 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D51057F11F0C955E00904813 /* Podfile */; };
+		D7ABADD91F0DDA8300E4A3FB /* TypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABADD81F0DDA8300E4A3FB /* TypePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		BE61D1BA1EEEC15800987432 /* CarCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarCare.xcdatamodel; sourceTree = "<group>"; };
 		BE61D1BC1EEECC0F00987432 /* CarCareStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCareStore.swift; sourceTree = "<group>"; };
 		D51057F11F0C955E00904813 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D7ABADD81F0DDA8300E4A3FB /* TypePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				02C7BCC41F00A5310026D121 /* DashboardViewController.swift */,
 				02C7BCC61F00B7FA0026D121 /* SettingsViewController.swift */,
 				02C7BCC81F00BE400026D121 /* ParkingViewController.swift */,
+				D7ABADD81F0DDA8300E4A3FB /* TypePicker.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				02C7BCCB1F00CEEC0026D121 /* PropertiesStore.swift in Sources */,
 				BE2079781EEAEAAF0028AC43 /* AppDelegate.swift in Sources */,
 				02C7BCC31F0086E00026D121 /* AddFuelUpEntryViewController.swift in Sources */,
+				D7ABADD91F0DDA8300E4A3FB /* TypePicker.swift in Sources */,
 				BE61D1BD1EEECC0F00987432 /* CarCareStore.swift in Sources */,
 				02C7BCC11F0077E20026D121 /* EntriesViewController.swift in Sources */,
 				02C7BCC51F00A5310026D121 /* DashboardViewController.swift in Sources */,
