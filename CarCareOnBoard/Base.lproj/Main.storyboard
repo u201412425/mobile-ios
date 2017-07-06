@@ -15,7 +15,7 @@
         <!--On Board View Controller-->
         <scene sceneID="ZEu-pE-iHi">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="MUi-IP-vvB" customClass="OnBoardViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="MUi-IP-vvB" customClass="OnBoardViewController" customModule="FindAppet" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hI1-9b-QXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324" y="-757"/>
@@ -145,153 +145,10 @@
             </objects>
             <point key="canvasLocation" x="959.20000000000005" y="115.59220389805098"/>
         </scene>
-        <!--Parking-->
-        <scene sceneID="Osv-km-mCh">
-            <objects>
-                <viewController id="bHv-3V-qRF" customClass="ParkingViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gw8-BT-NVh"/>
-                        <viewControllerLayoutGuide type="bottom" id="TUm-T2-AYg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OLh-6r-AkT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4V-eE-0yB">
-                                <rect key="frame" x="16" y="288" width="343" height="30"/>
-                                <state key="normal" title="Keep My Parking Location"/>
-                                <connections>
-                                    <action selector="keepLocationAction:" destination="bHv-3V-qRF" eventType="touchUpInside" id="odG-lc-I11"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp0-zf-hXf">
-                                <rect key="frame" x="22" y="407" width="337" height="30"/>
-                                <state key="normal" title="Show My Last Parking Location"/>
-                                <connections>
-                                    <segue destination="d3w-Y7-8mX" kind="presentation" id="vbE-n1-NsO"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zp0-zf-hXf" firstAttribute="leading" secondItem="OLh-6r-AkT" secondAttribute="leadingMargin" constant="6" id="5Ul-xj-BGt"/>
-                            <constraint firstItem="L4V-eE-0yB" firstAttribute="top" secondItem="gw8-BT-NVh" secondAttribute="bottom" constant="224" id="CCB-E6-6KV"/>
-                            <constraint firstItem="zp0-zf-hXf" firstAttribute="trailing" secondItem="L4V-eE-0yB" secondAttribute="trailing" id="GMo-aF-rdJ"/>
-                            <constraint firstItem="zp0-zf-hXf" firstAttribute="top" secondItem="L4V-eE-0yB" secondAttribute="bottom" constant="89" id="JJo-G7-k2M"/>
-                            <constraint firstItem="L4V-eE-0yB" firstAttribute="trailing" secondItem="OLh-6r-AkT" secondAttribute="trailingMargin" id="OkY-vi-rsK"/>
-                            <constraint firstItem="L4V-eE-0yB" firstAttribute="leading" secondItem="OLh-6r-AkT" secondAttribute="leadingMargin" id="jPb-FA-Pcc"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Parking" id="jsh-Dl-8dl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NMO-7F-k4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2718" y="1800"/>
-        </scene>
-        <!--My Last Parking-->
-        <scene sceneID="b6H-1M-ON9">
-            <objects>
-                <viewController id="VVT-rI-Hkp" customClass="LastParkingViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dbK-Pd-SI4"/>
-                        <viewControllerLayoutGuide type="bottom" id="eYo-XK-vQv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tqc-Do-hzg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-4O-IZl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zlk-4O-IZl" firstAttribute="bottom" secondItem="eYo-XK-vQv" secondAttribute="top" id="5Pl-Tt-wMU"/>
-                            <constraint firstItem="zlk-4O-IZl" firstAttribute="top" secondItem="tqc-Do-hzg" secondAttribute="top" id="MQq-r6-1Dn"/>
-                            <constraint firstAttribute="trailing" secondItem="zlk-4O-IZl" secondAttribute="trailing" id="QAS-sy-3BT"/>
-                            <constraint firstItem="zlk-4O-IZl" firstAttribute="leading" secondItem="tqc-Do-hzg" secondAttribute="leading" id="xR4-7l-oPX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Last Parking" id="6SO-4V-2Os">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="9A5-dJ-tiG">
-                            <connections>
-                                <action selector="doneButtonAction:" destination="VVT-rI-Hkp" id="Ut4-WX-1cv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="parkingMapView" destination="zlk-4O-IZl" id="tiO-55-NyH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nan-oK-b6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2718" y="3448"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="x40-3V-DM2">
-            <objects>
-                <viewController id="1OC-gN-xQ9" customClass="SettingsViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mzp-L5-b16"/>
-                        <viewControllerLayoutGuide type="bottom" id="7Fl-vB-Br1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ULM-2F-usE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Stored Parking Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-v5-0vX">
-                                <rect key="frame" x="16" y="153" width="227" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aca-hC-Xai">
-                                <rect key="frame" x="323" y="101" width="36" height="30"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clearEntriesAction:" destination="1OC-gN-xQ9" eventType="touchUpInside" id="3VD-nV-G1P"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pB-1v-ZKg">
-                                <rect key="frame" x="323" y="148" width="36" height="30"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clearParkingButton:" destination="1OC-gN-xQ9" eventType="touchUpInside" id="J8H-Ec-nlT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear all Stored Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-hP-iZg">
-                                <rect key="frame" x="16" y="106" width="174" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xX4-hP-iZg" firstAttribute="top" secondItem="aca-hC-Xai" secondAttribute="top" constant="5" id="3tX-g9-DW0"/>
-                            <constraint firstItem="xX4-hP-iZg" firstAttribute="leading" secondItem="ULM-2F-usE" secondAttribute="leadingMargin" id="5Be-ca-0wL"/>
-                            <constraint firstItem="2cZ-v5-0vX" firstAttribute="centerY" secondItem="5pB-1v-ZKg" secondAttribute="centerY" id="8L3-9C-Buk"/>
-                            <constraint firstItem="5pB-1v-ZKg" firstAttribute="trailing" secondItem="ULM-2F-usE" secondAttribute="trailingMargin" id="aNL-6T-YvV"/>
-                            <constraint firstItem="aca-hC-Xai" firstAttribute="trailing" secondItem="ULM-2F-usE" secondAttribute="trailingMargin" id="sLt-KR-dGi"/>
-                            <constraint firstItem="2cZ-v5-0vX" firstAttribute="top" secondItem="xX4-hP-iZg" secondAttribute="bottom" constant="26" id="to8-eJ-6Hl"/>
-                            <constraint firstItem="xX4-hP-iZg" firstAttribute="top" secondItem="mzp-L5-b16" secondAttribute="bottom" constant="42" id="xN9-Pn-f77"/>
-                            <constraint firstItem="2cZ-v5-0vX" firstAttribute="leading" secondItem="ULM-2F-usE" secondAttribute="leadingMargin" id="xqv-2H-jtu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="0bf-i1-4fy"/>
-                    <connections>
-                        <outlet property="clearEntriesButton" destination="aca-hC-Xai" id="k8W-SH-Cpe"/>
-                        <outlet property="clearParkingButton" destination="5pB-1v-ZKg" id="xYD-Wy-QDa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sMh-yF-Np4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3784.8000000000002" y="1799.5502248875564"/>
-        </scene>
         <!--Add FuelUp Entry-->
         <scene sceneID="iDe-9i-bby">
             <objects>
-                <viewController title="Add FuelUp Entry" id="Cxm-yQ-FKn" customClass="AddFuelUpEntryViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add FuelUp Entry" id="Cxm-yQ-FKn" customClass="AddFuelUpEntryViewController" customModule="FindAppet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cb9-oI-JWw"/>
                         <viewControllerLayoutGuide type="bottom" id="q2U-JQ-b73"/>
@@ -449,13 +306,13 @@
         <!--Mis mascotas-->
         <scene sceneID="0K3-Rh-3W3">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="I1H-SE-aQV" customClass="EntriesViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="I1H-SE-aQV" customClass="EntriesViewController" customModule="FindAppet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="jov-rh-dEv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="n2t-uP-bfe" userLabel="I" customClass="EntryTableViewCell" customModule="CarCareOnBoard" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="n2t-uP-bfe" userLabel="I" customClass="EntryTableViewCell" customModule="FindAppet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2t-uP-bfe" id="1s4-Ci-woG">
@@ -617,7 +474,6 @@
                     <connections>
                         <segue destination="x2z-xN-t8M" kind="relationship" relationship="viewControllers" id="OH4-KW-EYb"/>
                         <segue destination="Vsg-Vm-Gpr" kind="relationship" relationship="viewControllers" id="Hfx-iY-nkj"/>
-                        <segue destination="DIg-LX-FDy" kind="relationship" relationship="viewControllers" id="nnn-IJ-Ctl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DR3-RA-Zba" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,66 +536,10 @@
             </objects>
             <point key="canvasLocation" x="636" y="947.67616191904051"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="erq-gD-niM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DIg-LX-FDy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="t4z-uC-KVu"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1I8-2M-DjK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1OC-gN-xQ9" kind="relationship" relationship="rootViewController" id="apF-Y5-dab"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kyx-y1-c22" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3785" y="948"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tah-Ht-8XF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d3w-Y7-8mX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ALh-ve-mk7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="VVT-rI-Hkp" kind="relationship" relationship="rootViewController" id="uHu-kP-EAe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8xD-ee-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2718" y="2607"/>
-        </scene>
-        <!--Parking-->
-        <scene sceneID="tKK-ql-5yg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SHJ-m3-Fes" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Parking" image="location" id="6dT-3x-kqX"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="alH-ku-5pI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bHv-3V-qRF" kind="relationship" relationship="rootViewController" id="PIv-el-H66"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hkJ-2d-nKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2719" y="957"/>
-        </scene>
         <!--Add FuelUp Entry-->
         <scene sceneID="HIA-l3-yk5">
             <objects>
-                <viewController title="Add FuelUp Entry" id="rpX-0u-3cy" customClass="AddFuelUpEntryViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add FuelUp Entry" id="rpX-0u-3cy" customClass="AddFuelUpEntryViewController" customModule="FindAppet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DNZ-Du-dyc"/>
                         <viewControllerLayoutGuide type="bottom" id="anz-UX-ELx"/>
@@ -892,13 +692,13 @@
         <!--En adopcion-->
         <scene sceneID="n4g-rW-3qx">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="LuV-UQ-xZy" customClass="AdoptionPetsViewController" customModule="CarCareOnBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="LuV-UQ-xZy" customClass="AdoptionPetsViewController" customModule="FindAppet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="UKa-BQ-IuX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdoptionCell" rowHeight="80" id="F8N-4Q-ZLH" customClass="AdoptionPetsTableViewCell" customModule="CarCareOnBoard" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdoptionCell" rowHeight="80" id="F8N-4Q-ZLH" customClass="AdoptionPetsTableViewCell" customModule="FindAppet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8N-4Q-ZLH" id="wgI-5V-a30">
@@ -1003,10 +803,8 @@
     <resources>
         <image name="fueling" width="350" height="184"/>
         <image name="home" width="15" height="15"/>
-        <image name="location" width="15" height="15"/>
         <image name="odometer" width="375" height="211"/>
         <image name="parking" width="350" height="219"/>
-        <image name="settings" width="15" height="15"/>
         <image name="station" width="15" height="14"/>
     </resources>
 </document>
