@@ -18,13 +18,24 @@ class AddFuelUpEntryViewController: UIViewController, UIPickerViewDataSource, UI
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var ageLabel: UILabel!
+    var data: PetEntry? = nil
     var ageValue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        guard let entry = data else {
+            return
+        }
+        nameLabel.text = entry.petName
+        descriptionLabel.text = entry.petDescription
+        caracteristicasLabel.text = entry.petCharacteristics
+        slider.value = Float(entry.petAge)
+        ageLabel.text = String(format: "%d años", entry.petAge)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

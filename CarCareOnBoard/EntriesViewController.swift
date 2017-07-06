@@ -24,6 +24,7 @@ class EntryTableViewCell: UITableViewCell {
 
 class EntriesViewController: UITableViewController {
     var entries: [PetEntry] = []
+    var entry = PetEntry()
     let context = (UIApplication.shared.delegate as! AppDelegate)
         .persistentContainer.viewContext
     override func viewDidLoad() {
@@ -37,6 +38,20 @@ class EntriesViewController: UITableViewController {
         //entries = carCareDataStore.findAllFuelUpEntries()
         
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        entry=entries[indexPath.row]
+        self.performSegue(withIdentifier: "addEditPet", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        let secondViewController = segue.destination as! UINavigationController
+        let innerController = secondViewController.viewControllers.first as! AddFuelUpEntryViewController
+        // set a variable in the second view controller with the data to pass
+        innerController.data = entry
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +74,7 @@ class EntriesViewController: UITableViewController {
                     entry.userId = element["UserId"] as! Int32
                     entry.petName = element["NamePet"] as? String
                     entry.petDescription = element["Description"] as? String
+                    entry.petCharacteristics = element["SpecialFeatures"] as? String
                     self.entries.append(entry)
                 }
                 //entries = carCareDataStore.findAllFuelUpEntries()

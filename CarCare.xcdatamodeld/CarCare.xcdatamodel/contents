@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G18a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FuelType" representedClassName="FuelType" syncable="YES" codeGenerationType="class">
         <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +15,7 @@
     </entity>
     <entity name="PetEntry" representedClassName="PetEntry" syncable="YES" codeGenerationType="class">
         <attribute name="petAge" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="petCharacteristics" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="petDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="petId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="petName" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,6 +24,6 @@
     <elements>
         <element name="FuelType" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="FuelUpEntry" positionX="-54" positionY="9" width="128" height="135"/>
-        <element name="PetEntry" positionX="-63" positionY="45" width="128" height="120"/>
+        <element name="PetEntry" positionX="-63" positionY="45" width="128" height="135"/>
     </elements>
 </model>
