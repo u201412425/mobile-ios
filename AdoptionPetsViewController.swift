@@ -1,4 +1,13 @@
 //
+//  AdoptionPetsViewController.swift
+//  
+//
+//  Created by Carlos Escobar on 7/5/17.
+//
+//
+
+import Foundation
+//
 //  EntriesViewController.swift
 //  CarCareOnBoard
 //
@@ -9,12 +18,12 @@
 import UIKit
 import Alamofire
 
-class EntryTableViewCell: UITableViewCell {
-
+class AdoptionPetsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    static func build(cell: EntryTableViewCell, from entry: PetEntry) -> EntryTableViewCell {
+    static func build(cell: AdoptionPetsTableViewCell, from entry: PetEntry) -> AdoptionPetsTableViewCell {
         cell.nameLabel.text = "\(entry.petName!)"
         cell.descriptionLabel.text = "\(entry.petDescription!)"
         cell.ageLabel.text = "\(entry.petAge)"
@@ -22,7 +31,7 @@ class EntryTableViewCell: UITableViewCell {
     }
 }
 
-class EntriesViewController: UITableViewController {
+class AdoptionPetsViewController: UITableViewController {
     var entries: [PetEntry] = []
     let context = (UIApplication.shared.delegate as! AppDelegate)
         .persistentContainer.viewContext
@@ -38,9 +47,11 @@ class EntriesViewController: UITableViewController {
         
         
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(entries[indexPath.row])
+    }
     override func viewWillAppear(_ animated: Bool) {
-        Alamofire.request("http://doggystyle.vcsoft.pe/api/3/Pets").responseJSON { response in
+        Alamofire.request("http://doggystyle.vcsoft.pe/api/petadoption").responseJSON { response in
             //print(response.request ?? "NOREQ")  // original URL request
             //print(response.response ?? "NORESP") // HTTP URL response
             //print(response.data ?? "NODATA")     // server data
@@ -93,57 +104,11 @@ class EntriesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
-        let cell = EntryTableViewCell.build(
-            cell: tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EntryTableViewCell,
+        let cell = AdoptionPetsTableViewCell.build(
+            cell: tableView.dequeueReusableCell(withIdentifier: "AdoptionCell", for: indexPath) as! AdoptionPetsTableViewCell,
             from: entries[indexPath.row])
         return cell
     }
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     var carCareDataStore: CarCareStore {
         get {
             return (UIApplication.shared.delegate as! AppDelegate).carCareDataStore

@@ -25,6 +25,7 @@
 		BE61D1BD1EEECC0F00987432 /* CarCareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE61D1BC1EEECC0F00987432 /* CarCareStore.swift */; };
 		D51057F21F0C955E00904813 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D51057F11F0C955E00904813 /* Podfile */; };
 		D7ABADD91F0DDA8300E4A3FB /* TypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABADD81F0DDA8300E4A3FB /* TypePicker.swift */; };
+		D7ABADDB1F0E14B900E4A3FB /* AdoptionPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABADDA1F0E14B900E4A3FB /* AdoptionPetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BE61D1BC1EEECC0F00987432 /* CarCareStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCareStore.swift; sourceTree = "<group>"; };
 		D51057F11F0C955E00904813 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		D7ABADD81F0DDA8300E4A3FB /* TypePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypePicker.swift; sourceTree = "<group>"; };
+		D7ABADDA1F0E14B900E4A3FB /* AdoptionPetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdoptionPetsViewController.swift; path = ../AdoptionPetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		BE20798B1EEB13770028AC43 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7ABADDA1F0E14B900E4A3FB /* AdoptionPetsViewController.swift */,
 				02C7BCCC1F0134100026D121 /* LastParkingViewController.swift */,
 				BE20797B1EEAEAAF0028AC43 /* Main.storyboard */,
 				BE2079801EEAEAAF0028AC43 /* LaunchScreen.storyboard */,
@@ -289,6 +292,7 @@
 				D7ABADD91F0DDA8300E4A3FB /* TypePicker.swift in Sources */,
 				BE61D1BD1EEECC0F00987432 /* CarCareStore.swift in Sources */,
 				02C7BCC11F0077E20026D121 /* EntriesViewController.swift in Sources */,
+				D7ABADDB1F0E14B900E4A3FB /* AdoptionPetsViewController.swift in Sources */,
 				02C7BCC51F00A5310026D121 /* DashboardViewController.swift in Sources */,
 				02C7BCC71F00B7FA0026D121 /* SettingsViewController.swift in Sources */,
 			);

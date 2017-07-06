@@ -7,21 +7,18 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddFuelUpEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    @IBOutlet weak var gallonsTextField: UITextField!
-  
-    @IBOutlet weak var unitPriceTextField: UITextField!
-  
-    @IBOutlet weak var odometerTextField: UITextField!
-  
-    @IBOutlet weak var slider: UISlider!
+
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var descriptionLabel: UITextField!
+    @IBOutlet weak var caracteristicasLabel: UITextField!
     
+    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var locationReferenceTextField: UITextField!
-  
-  
+    var ageValue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,9 +32,10 @@ class AddFuelUpEntryViewController: UIViewController, UIPickerViewDataSource, UI
     
 
     @IBAction func valueChanged(_ sender: Any) {
-        ageLabel.text = String(format: "%d años", Int(slider.value))
+        ageValue = Int(slider.value)
+        ageLabel.text = String(format: "%d años", ageValue)
     }
-    let pickerDataSource=["Pekines","Alemán","Poodle","Rottweiler","Salchicha","Otro"]
+    let pickerDataSource=["Perro","Gato"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -65,8 +63,23 @@ class AddFuelUpEntryViewController: UIViewController, UIPickerViewDataSource, UI
   }
   
   @IBAction func saveAction(_ sender: UIBarButtonItem) {
-    carCareStore.addFuelUpEntry(gallons: Double.init(gallonsTextField.text!)!, locationReference: locationReferenceTextField.text!, odometer: odometerTextField.text!, unitPrice: Double.init(unitPriceTextField.text!)!, fuelType: carCareStore.defaultFuelType())
-    self.dismiss(animated: true, completion: nil)
+    let parameters: Parameters = [
+        "UserId": 3,
+        "NamePet": nameLabel.text!,
+        "Description": descriptionLabel.text!,
+        "State": "ACT",
+        "Type": 1,
+        "SpecialFeatures": caracteristicasLabel.text!,
+        "Age": ageValue,
+        "ImagenUrl": "http://vcsoft.pe/images/mem3.png"
+    ]
+    Alamofire.request("http://doggystyle.vcsoft.pe/api/Pets/0", method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            print(response.request ?? "NOREQ")  // original URL request
+            print(response.response ?? "NORESP") // HTTP URL response
+            print(response.data ?? "NODATA")     // server data
+            print(response.result)   // result of response serialization
+            self.dismiss(animated: true, completion: nil)
+        }
   }
   
   var carCareStore: CarCareStore {
